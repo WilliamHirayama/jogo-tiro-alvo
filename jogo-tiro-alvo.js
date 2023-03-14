@@ -90,13 +90,13 @@ function dispara(evento) {
     var xMouse = evento.pageX - tela.offsetLeft;
     var yMouse = evento.pageY - tela.offsetTop;
 
-    if(xMouse > xAlvo-(raio1) && xMouse < xAlvo+(raio1) && yMouse > yAlvo-(raio1) && yMouse < yAlvo+(raio1)){
+    if(xMouse > xAlvo-raio1 && xMouse < xAlvo+raio1 && yMouse > yAlvo-raio1 && yMouse < yAlvo+raio1){
         pontos += 15;
         //console.log(pontos);
-    } else if(xMouse > xAlvo-(raio2) && xMouse < xAlvo+(raio2) && yMouse > yAlvo-(raio2) && yMouse < yAlvo+(raio2)){
+    } else if(xMouse > xAlvo-raio2 && xMouse < xAlvo+raio2 && yMouse > yAlvo-raio2 && yMouse < yAlvo+raio2){
         pontos += 10;
         //console.log(pontos);
-    } else if (xMouse > xAlvo-(raio3) && xMouse < xAlvo+(raio3) && yMouse > yAlvo-(raio3) && yMouse < yAlvo+(raio3)){
+    } else if (xMouse > xAlvo-raio3 && xMouse < xAlvo+raio3 && yMouse > yAlvo-raio3 && yMouse < yAlvo+raio3){
         pontos += 5;
        //console.log(pontos);
     }
