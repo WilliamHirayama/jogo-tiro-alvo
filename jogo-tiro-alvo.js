@@ -28,7 +28,7 @@ function desenhaAlvo() {
 
     //a cada vez que a função desenhaAlvo for chamada, um novo valor de Y para os círculos será definido.
     function yAleatorio (min, max) {
-        min = raio3;
+        min = raio3+20; //o y gerado nunca será inferior à borda da pontuação.
         max = 400-(raio3);
         return Math.floor(Math.random()*(max-min)+min);
     }
@@ -43,16 +43,13 @@ function desenhaAlvo() {
 
 //função que desenha o quadro de pontuação do jogo.
 function quadroPontuacao() {
-    pincel.fillStyle = 'black';
-    pincel.font = '12px sans-serif';
-    pincel.fillText('Pontuação', 3,14)
-    
     pincel.fillStyle = 'darkgray'
-    pincel.fillRect(61, 1, 40, 16)
-
-    pincel.fillStyle = 'blue'
-    pincel.font = '14px sans-serif';
-    pincel.fillText(pontos, 65, 14);
+    pincel.fillRect(0, 0, 600, 20)
+    
+    pincel.fillStyle = 'blue';
+    pincel.textAlign = 'center';
+    pincel.font = '19px sans-serif';
+    pincel.fillText(pontos, 300, 18);
 }
 
 //função que limpa a tela após o desenho de cada alvo.Caso contrário, vários alvos apareceriam na tela.
@@ -92,13 +89,10 @@ function dispara(evento) {
 
     if(xMouse > xAlvo-raio1 && xMouse < xAlvo+raio1 && yMouse > yAlvo-raio1 && yMouse < yAlvo+raio1){
         pontos += 15;
-        //console.log(pontos);
     } else if(xMouse > xAlvo-raio2 && xMouse < xAlvo+raio2 && yMouse > yAlvo-raio2 && yMouse < yAlvo+raio2){
         pontos += 10;
-        //console.log(pontos);
     } else if (xMouse > xAlvo-raio3 && xMouse < xAlvo+raio3 && yMouse > yAlvo-raio3 && yMouse < yAlvo+raio3){
         pontos += 5;
-       //console.log(pontos);
     }
     clearInterval(atualizaJogo);
     nivelDificuldade();
